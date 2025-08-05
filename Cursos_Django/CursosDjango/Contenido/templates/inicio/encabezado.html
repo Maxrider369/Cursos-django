@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block titulo %} Título por defecto {% endblock %}</title>
+    {% load static %}
+    <link href="{% static 'inicio/css/styles.css' %}" rel="stylesheet" type="text/css">
+</head>
+<body>
+ 	<header>
+		<nav>
+			<div class="logo">
+				<img src="{% static 'inicio/img/logo.webp'%}" alt="logo">
+			</div>
+				<ul class="opciones">
+						<li><a href="{%url 'Principal' %}">Principal</a></li>
+						<li><a href="{%url 'cursos' %}">Cursos</a></li>	
+						<li class="btn"><a href="{%url 'contacto' %}">Contacto</a></li>
+				</ul>
+		</nav>
+		</header>
+		
+
+
+		<!-- CONTENIDO-->   
+        {% block contenido %} <!-- TEMPLATE TAG--> 
+        <!-- block sirve para indicar que colocaremos un bloque de contenido a través de muestra variables content --> 
+        {% endblock %}
+
+	</div>
+</body>
+</html>
